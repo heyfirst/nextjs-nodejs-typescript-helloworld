@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  api:
+    build:
+      context: ../../api
+      dockerfile: Dockerfile
+    env_file:
+      - ../../api/.env
+    ports:
+      - 15001:3001
+  web:
+    build:
+      context: ../../web
+      dockerfile: Dockerfile
+    env_file:
+      - ../../web/.env
+    ports:
+      - 15000:3000
